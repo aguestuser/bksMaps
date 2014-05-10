@@ -1,9 +1,12 @@
+//Written by Austin Guest April 2014
+//Free Software licensed under GPL v3.0 (see http://www.gnu.org/copyleft/gpl.html)
+//Deployed here: http://badideafactory.net/bks/maps/allAccounts
+
 $(document).ready(function(){//initialize tabletop on load
   initTabletop(); 
 });
 
 var pins = [];
-var tileLayer = {};
 
 function initTabletop() {//...create instance of tabletop to slurp data from order form spreadsheet
     tabletop = Tabletop.init({

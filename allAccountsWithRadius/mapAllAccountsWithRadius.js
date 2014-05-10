@@ -1,3 +1,7 @@
+//Written by Austin Guest April 2014
+//Free Software licensed under GPL v3.0 (see http://www.gnu.org/copyleft/gpl.html)
+//Deployed here: http://badideafactory.net/bks/maps/allAccountsWithRadius
+
 $(document).ready(function(){//initialize tabletop on load
 	initTabletop(); 
 });
