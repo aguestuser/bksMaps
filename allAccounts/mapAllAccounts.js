@@ -3,6 +3,7 @@ $(document).ready(function(){//initialize tabletop on load
 });
 
 var pins = [];
+var tileLayer = {};
 
 function initTabletop() {//...create instance of tabletop to slurp data from order form spreadsheet
     tabletop = Tabletop.init({
@@ -21,14 +22,14 @@ function buildMap(tt) {
 
 function initMap() {
   var map = L.map('map-canvas', {
-    center: [40.674799, -73.954362],
-    zoom: 13
+    center: [40.740247, -73.985768],
+    zoom: 12
   });
-  L.tileLayer('http://{s}.tile.cloudmade.com/a709cb849b29495cb18f11b31675dfd1/997/256/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-        maxZoom: 18
-    }).addTo(map);
-    return map;
+  tileLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/bkshift.i4iloni0/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18
+  }).addTo(map);
+  return map;
 };
 
 function getActiveAccounts(accs){
@@ -79,8 +80,7 @@ function Pin(map, rec) {
       title: _.values(data[0])[0],
       clickable: true
     }).addTo(self.map)
-      .bindPopup(text)
-      .openPopup();
+      .bindPopup(text);
   };
 
 };
