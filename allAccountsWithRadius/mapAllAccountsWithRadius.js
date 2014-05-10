@@ -5,7 +5,7 @@ $(document).ready(function(){//initialize tabletop on load
 var pins = [];
 
 function initTabletop() {//...create instance of tabletop to slurp data from order form spreadsheet
-    tabletop = Tabletop.init({
+    var tabletop = Tabletop.init({
     	key: '0AkfgEUsp5QrAdFJyOW9RMjk5M2FNMXI4bmJBMzMwWFE', 
     	callback: buildMap, 
     	simpleSheet: false 
@@ -13,9 +13,8 @@ function initTabletop() {//...create instance of tabletop to slurp data from ord
 };
 
 function buildMap(tt) {
-	map = initMap();
-  whatistabletop = tt;
-  accounts = getActiveAccounts(tt.info.elements);
+	var map = initMap(),
+    accounts = getActiveAccounts(tt.info.elements);
   mapAccounts(map, accounts);
 };
 
@@ -44,6 +43,8 @@ function mapAccounts(map, accounts){
 
 function Pin(map, rec) {	  
   
+  var self = this;
+
   //attrs
   this.map = map;
   this.lat = rec.lat;

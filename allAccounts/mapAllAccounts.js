@@ -14,9 +14,8 @@ function initTabletop() {//...create instance of tabletop to slurp data from ord
 };
 
 function buildMap(tt) {
-  map = initMap();
-  whatistabletop = tt;
-  accounts = getActiveAccounts(tt.info.elements);
+  var map = initMap(),
+    accounts = getActiveAccounts(tt.info.elements);
   mapAccounts(map, accounts);
 };
 
@@ -43,6 +42,9 @@ function mapAccounts(map, accounts){
 };
 
 function Pin(map, rec) {    
+  
+  var self = this;
+
   //attrs
   this.map = map;
   this.lat = rec.lat;
