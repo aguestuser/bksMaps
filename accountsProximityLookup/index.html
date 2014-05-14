@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta name='viewport' content='initial-scale=1.0, user-scalable=no' />
+    
+    <style type='text/css'>
+      html { height: 100%; }
+      body { height: 100%; margin: 0; padding: 0; }
+      #map-canvas {position: relative; height: 100%; width: 100%;}      
+      #lookup-bar {
+        z-index: 1; 
+        position: relative;
+        width: 27em; 
+        left: 4em;
+        margin: 1em;
+        padding: 1em; 
+        background: white; 
+        border: 1px solid black;
+      }
+      #address{width: 25em;}
+    </style>
+   	
+   	<!-- Include jQuery-->
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
+    <!-- Include QUnit -->
+    <script type='text/javascript'src='../../../libraries/qunit-1.14.0.js'></script>    
+   	<!-- Include Underscore -->
+    <script type='text/javascript'src='../../../libraries/underscore-min.js'></script>    
+    <!-- Include Tabletop -->
+    <script type='text/javascript'src='../../../libraries/tabletop.js'></script>    
+    <!-- Include mapNearbyAccounts.js -->
+    <script type='text/javascript' src ='mapNearbyAccounts.js'></script>
+    <!-- Include mapbox.js  -->
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+  </head>
+  
+  <body>
+  
+    <div id='map-canvas'>
+        <div id='lookup-bar'>
+          <form>
+            <strong>Address:</strong> <input type='text' name='address' id='address'><br/>
+            <button id='lookup'>Lookup!</button>
+          </form>
+        </div>
+    </div>
+
+  
+  </body>
+
+</html>
